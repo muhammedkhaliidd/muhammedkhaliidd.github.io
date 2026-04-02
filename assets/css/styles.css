@@ -259,6 +259,11 @@ html[data-theme="light"] .btn[data-theme-toggle]::before {
   font-size: 13px;
 }
 
+.siteHeader .btnPrimary {
+  font-size: 13px;
+  padding: 7px 10px;
+}
+
 .btn:hover {
   border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
   transform: var(--lift);
@@ -291,7 +296,7 @@ main {
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
   gap: 18px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .avatarWrap {
@@ -327,6 +332,9 @@ main {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 22px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .heroCard:hover {
@@ -354,7 +362,7 @@ h1 {
   margin: 10px 0 6px;
   line-height: 1.12;
   letter-spacing: -0.5px;
-  font-size: clamp(28px, 4.1vw, 46px);
+  font-size: clamp(26px, 3.8vw, 40px);
 }
 
 .subtitle {
@@ -374,12 +382,13 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 10px;
+  padding: 7px 9px;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
   background: color-mix(in srgb, var(--surface) 85%, transparent);
   color: var(--muted);
   font-weight: 650;
+  font-size: 13px;
 }
 
 .section {
@@ -519,13 +528,14 @@ h1 {
 }
 
 .tag {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 600;
   color: color-mix(in srgb, var(--accent) 90%, var(--text));
   border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
   background: color-mix(in srgb, var(--accent) 10%, var(--surface));
   border-radius: 999px;
   padding: 6px 10px;
+  gap: 4px;
 }
 
 .tag:hover {
