@@ -749,6 +749,10 @@ h1 {
     gap: 6px;
   }
 
+  .sectionHeader > a {
+    align-self: flex-end;
+  }
+
   .sectionHeader h2 {
     font-size: 19px;
   }
