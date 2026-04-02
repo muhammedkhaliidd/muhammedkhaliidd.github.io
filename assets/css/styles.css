@@ -237,11 +237,20 @@ a:hover {
   content: "\f2bb";
 }
 
-.navLinks a:hover {
+.navLinks a:focus-visible {
   text-decoration: none;
   color: var(--text);
-  border-bottom-color: color-mix(in srgb, var(--accent) 45%, var(--border));
-  background: transparent;
+  border-bottom-color: var(--accent);
+  outline: none;
+}
+
+@media (hover: hover) {
+  .navLinks a:hover {
+    text-decoration: none;
+    color: var(--text);
+    border-bottom-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+    background: transparent;
+  }
 }
 
 .navLinks a[aria-current="page"] {
@@ -708,7 +717,12 @@ h1 {
     overflow-x: auto;
     flex-wrap: nowrap;
     padding-bottom: 2px;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .navLinks::-webkit-scrollbar {
+    display: none;
   }
 
   .navLinks a {
@@ -825,7 +839,7 @@ h1 {
   }
 
   .brandRole {
-    display: none;
+    display: block;
   }
 
   .brandMark {

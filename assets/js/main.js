@@ -43,9 +43,28 @@
 
   // Highlight current nav link
   const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  const navLinks = document.querySelector(".navLinks");
+  const prefersReducedMotion = globalThis.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function scrollTabIntoView(tab) {
+    if (!navLinks || !tab) return;
+    tab.scrollIntoView({
+      block: "nearest",
+      inline: "center",
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
+  }
+
   document.querySelectorAll(".navLinks a[href]").forEach((a) => {
     const href = (a.getAttribute("href") || "").toLowerCase();
-    if (href === path) a.setAttribute("aria-current", "page");
+    if (href === path) {
+      a.setAttribute("aria-current", "page");
+      // Keep active tab visible in horizontally scrollable nav.
+      requestAnimationFrame(() => scrollTabIntoView(a));
+    }
+
+    a.addEventListener("click", () => scrollTabIntoView(a));
+    a.addEventListener("focus", () => scrollTabIntoView(a));
   });
 })();
 
