@@ -485,6 +485,35 @@ h1 {
   font-size: 16px;
 }
 
+.expCardHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 6px;
+}
+
+.expCardHead h3 {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  font-size: 16px;
+}
+
+.expCompanyLinkTop {
+  flex-shrink: 0;
+  color: #0a66c2;
+  font-size: 22px;
+  line-height: 1;
+  text-decoration: none;
+  margin-top: 1px;
+}
+
+.expCompanyLinkTop:hover {
+  color: color-mix(in srgb, #0a66c2 82%, var(--text));
+  text-decoration: none;
+}
+
 .contactCard {
   position: relative;
   display: flex;
