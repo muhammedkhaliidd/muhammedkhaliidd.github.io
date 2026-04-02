@@ -19,7 +19,7 @@
   --easeOut: cubic-bezier(0.2, 0.8, 0.2, 1);
   --durFast: 140ms;
   --dur: 220ms;
-  --lift: translateY(-3px);
+  --lift: translateY(-1px);
 }
 
 html[data-theme="dark"] {
@@ -308,7 +308,7 @@ html[data-theme="light"] .btn[data-theme-toggle]::before {
 .btn:hover {
   border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
   transform: var(--lift);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
 .btnPrimary {
@@ -379,7 +379,7 @@ main {
 }
 
 .heroCard:hover {
-  transform: translateY(-1px);
+  transform: translateY(-0.5px);
   border-color: color-mix(in srgb, var(--accent) 22%, var(--border));
 }
 
@@ -477,7 +477,7 @@ h1 {
 .card:hover {
   transform: var(--lift);
   border-color: color-mix(in srgb, var(--accent) 26%, var(--border));
-  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
 }
 
 .card h3 {
