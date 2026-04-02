@@ -170,6 +170,37 @@ a:hover {
   font-weight: 600;
   padding: 8px 10px;
   border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navLinks a::before {
+  font-family: "Font Awesome 6 Free", sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.navLinks a[href="index.html"]::before {
+  content: "\f015";
+}
+
+.navLinks a[href="projects.html"]::before {
+  content: "\f542";
+}
+
+.navLinks a[href="experience.html"]::before {
+  content: "\f0b1";
+}
+
+.navLinks a[href="about.html"]::before {
+  content: "\f05a";
+}
+
+.navLinks a[href="contact.html"]::before {
+  content: "\f2bb";
 }
 
 .navLinks a:hover {
@@ -202,6 +233,30 @@ a:hover {
   border-radius: 12px;
   font-weight: 650;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn[data-theme-toggle]::before {
+  font-family: "Font Awesome 6 Free", sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+html[data-theme="dark"] .btn[data-theme-toggle]::before {
+  content: "\f186";
+}
+
+html[data-theme="light"] .btn[data-theme-toggle]::before {
+  content: "\f185";
+}
+
+.siteHeader .btnPrimary::before {
+  content: "\f019";
+  font-family: "Font Awesome 6 Free", sans-serif;
+  font-weight: 900;
+  font-size: 13px;
 }
 
 .btn:hover {
@@ -282,7 +337,7 @@ main {
 .kicker {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-weight: 700;
   color: var(--muted);
 }
@@ -345,6 +400,17 @@ h1 {
   letter-spacing: -0.2px;
 }
 
+.titleWithIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.titleIcon {
+  color: color-mix(in srgb, var(--accent) 86%, var(--text));
+  font-size: 0.92em;
+}
+
 .grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -367,6 +433,66 @@ h1 {
 .card h3 {
   margin: 0 0 6px;
   font-size: 16px;
+}
+
+.contactCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  gap: 10px;
+  padding: 18px;
+}
+
+.contactCard.hasAction {
+  padding-top: 18px;
+  min-height: auto;
+}
+
+.contactCard h3,
+.contactCard .meta,
+.contactCard p {
+  margin: 0;
+}
+
+.contactCard .meta {
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.contactValue {
+  margin: 10px 0 0;
+  color: var(--text);
+  font-weight: 600;
+  min-height: 24px;
+}
+
+.contactAction {
+  margin: 10px 0 0;
+}
+
+.contactActionTop {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  margin: 0;
+  z-index: 2;
+}
+
+.contactActionTop .btn {
+  min-height: 34px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.contactCard.hasAction h3 {
+  padding-right: 132px;
+}
+
+.contactNote {
+  margin: 10px 0 0;
+  color: var(--muted);
 }
 
 .meta {
@@ -445,10 +571,61 @@ h1 {
   gap: 12px;
 }
 
+.footerMeta {
+  display: grid;
+  gap: 4px;
+}
+
+.footerTagline {
+  color: var(--muted);
+}
+
 .footerLinks {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.footerLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footerLinks a::before {
+  font-family: "Font Awesome 6 Free", sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.footerLinks a[href="contact.html"]::before {
+  content: "\f2bb";
+}
+
+.footerLinks a[href="projects.html"]::before {
+  content: "\f542";
+}
+
+.footerLinks a[href*="drive.google.com"]::before {
+  content: "\f1c1";
+}
+
+.footerLinks a[href*="linkedin.com"]::before {
+  content: "\f08c";
+  font-family: "Font Awesome 6 Brands", sans-serif;
+  font-weight: 400;
+}
+
+.footerLinks a[href*="github.com"]::before {
+  content: "\f09b";
+  font-family: "Font Awesome 6 Brands", sans-serif;
+  font-weight: 400;
+}
+
+.footerLinks a[href="#content"]::before {
+  content: "\f062";
 }
 
 .small {
@@ -499,7 +676,7 @@ h1 {
   }
 
   .navActions {
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: 8px;
     flex-wrap: wrap;
   }
@@ -513,6 +690,20 @@ h1 {
     padding: 18px;
   }
 
+  .contactCard {
+    padding: 18px;
+    min-height: auto;
+  }
+
+  .contactCard.hasAction {
+    padding-top: 18px;
+    min-height: auto;
+  }
+
+  .contactCard.hasAction h3 {
+    padding-right: 122px;
+  }
+
   main {
     padding: 24px 0 44px;
   }
@@ -523,6 +714,10 @@ h1 {
 
   .avatar {
     width: 150px;
+  }
+
+  .footerRow {
+    align-items: flex-start;
   }
 }
 

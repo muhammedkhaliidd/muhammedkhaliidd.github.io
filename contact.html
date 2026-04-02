@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contact | Muhammed Khalid</title>
     <meta name="description" content="Contact details and links." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="icon" type="image/png" href="assets/img/headshot.png" />
     <link rel="apple-touch-icon" href="assets/img/headshot.png" />
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -48,65 +49,83 @@
       <div class="container">
         <section class="section" style="margin-top: 0">
           <div class="sectionHeader">
-            <h2>Contact</h2>
+            <h2 class="titleWithIcon">
+              <i class="fa-solid fa-address-card titleIcon" aria-hidden="true"></i>
+              Contact
+            </h2>
             <div class="small" style="color: var(--muted)">Get in touch</div>
           </div>
 
           <div class="grid2">
-            <article class="card">
-              <h3>Location</h3>
+            <article class="card contactCard">
+              <h3 class="titleWithIcon"><i class="fa-solid fa-location-dot titleIcon" aria-hidden="true"></i>Location</h3>
               <div class="meta">Cairo, Egypt</div>
-              <p class="small" style="margin: 10px 0 0; color: var(--muted)">On‑site / Hybrid / Remote</p>
+              <p class="contactValue">On‑site / Hybrid / Remote</p>
+              <p class="small contactNote">Open to local and remote opportunities.</p>
             </article>
 
-            <article class="card">
-              <h3>Email</h3>
+            <article class="card contactCard hasAction">
+              <p class="contactActionTop">
+                <a class="btn btnPrimary" href="mailto:Mohamedkhaled303110@gmail.com">Send email</a>
+              </p>
+              <h3 class="titleWithIcon"><i class="fa-solid fa-envelope titleIcon" aria-hidden="true"></i>Email</h3>
               <div class="meta">Preferred</div>
-              <p style="margin: 10px 0 0">
+              <p class="contactValue">
                 <a href="mailto:Mohamedkhaled303110@gmail.com">Mohamedkhaled303110@gmail.com</a>
               </p>
-            </article>
-
-            <article class="card">
-              <h3>Phone</h3>
-              <div class="meta">Egypt</div>
-              <p style="margin: 10px 0 0">
-                <a href="tel:+201551109704">+20 155 110 9704</a>
+              <p class="small contactNote">
+                Best channel for direct opportunities and collaboration.
               </p>
             </article>
 
-            <article class="card">
-              <h3>LinkedIn</h3>
-              <div class="meta">Profile</div>
-              <p style="margin: 10px 0 0">
+            <article class="card contactCard hasAction">
+              <p class="contactActionTop">
+                <a class="btn btnPrimary" href="https://wa.me/201551109704" target="_blank" rel="noreferrer">Open WhatsApp</a>
+              </p>
+              <h3 class="titleWithIcon"><i class="fa-solid fa-phone titleIcon" aria-hidden="true"></i>Phone</h3>
+              <div class="meta">Calls & WhatsApp</div>
+              <p class="contactValue">
+                <a href="tel:+201551109704">+20 155 110 9704</a>
+              </p>
+              <p class="small contactNote">
+                Available for quick calls, WhatsApp messages, and interview coordination.
+              </p>
+            </article>
+
+            <article class="card contactCard hasAction">
+              <p class="contactActionTop">
                 <a class="btn btnPrimary" href="https://www.linkedin.com/in/muhammedkhaliid/" target="_blank" rel="noreferrer"
                   >Open LinkedIn</a
                 >
               </p>
-              <p class="small" style="margin: 10px 0 0; color: var(--muted)">
-                <a href="https://www.linkedin.com/in/muhammedkhaliid/" target="_blank" rel="noreferrer"
-                  >linkedin.com/in/muhammedkhaliid</a
-                >
+              <h3 class="titleWithIcon"><i class="fa-brands fa-linkedin titleIcon" aria-hidden="true"></i>LinkedIn</h3>
+              <div class="meta">Profile</div>
+              <p class="contactValue">
+                linkedin.com/in/muhammedkhaliid
+              </p>
+              <p class="small contactNote">
+                Professional profile, experience timeline, and network.
               </p>
             </article>
 
-            <article class="card">
-              <h3>GitHub</h3>
-              <div class="meta">Profile</div>
-              <p style="margin: 10px 0 0">
+            <article class="card contactCard hasAction">
+              <p class="contactActionTop">
                 <a class="btn btnPrimary" href="https://github.com/muhammedkhaliidd" target="_blank" rel="noreferrer"
                   >Open GitHub</a
                 >
               </p>
-              <p class="small" style="margin: 10px 0 0; color: var(--muted)">
-                <a href="https://github.com/muhammedkhaliidd" target="_blank" rel="noreferrer">github.com/muhammedkhaliidd</a>
+              <h3 class="titleWithIcon"><i class="fa-brands fa-github titleIcon" aria-hidden="true"></i>GitHub</h3>
+              <div class="meta">Profile</div>
+              <p class="contactValue">
+                github.com/muhammedkhaliidd
+              </p>
+              <p class="small contactNote">
+                Selected repositories and technical implementation samples.
               </p>
             </article>
 
-            <article class="card">
-              <h3>CV</h3>
-              <div class="meta">PDF</div>
-              <p style="margin: 10px 0 0">
+            <article class="card contactCard hasAction">
+              <p class="contactActionTop">
                 <a
                   class="btn btnPrimary"
                   href="https://drive.google.com/file/d/1ogMhPn9wdrZe2wG6lk75J7KMx99sVMgh/view?usp=sharing"
@@ -114,6 +133,14 @@
                   rel="noreferrer"
                   >Open CV</a
                 >
+              </p>
+              <h3 class="titleWithIcon"><i class="fa-solid fa-file-pdf titleIcon" aria-hidden="true"></i>CV</h3>
+              <div class="meta">PDF</div>
+              <p class="contactValue">
+                Latest version hosted on Google Drive.
+              </p>
+              <p class="small contactNote">
+                Always points to the latest version on Google Drive.
               </p>
             </article>
           </div>
@@ -124,9 +151,17 @@
     <footer class="siteFooter">
       <div class="container">
         <div class="footerRow">
-          <div class="small">© <span id="y"></span> Muhammed Khalid</div>
+          <div class="footerMeta">
+            <div class="small">© <span id="y"></span> Muhammed Khalid</div>
+            <div class="small footerTagline">
+              Senior Frontend Developer • Angular • Cross-platform
+            </div>
+          </div>
           <div class="footerLinks small">
             <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://www.linkedin.com/in/muhammedkhaliid/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/muhammedkhaliidd" target="_blank" rel="noreferrer">GitHub</a>
             <a
               href="https://drive.google.com/file/d/1ogMhPn9wdrZe2wG6lk75J7KMx99sVMgh/view?usp=sharing"
               target="_blank"
