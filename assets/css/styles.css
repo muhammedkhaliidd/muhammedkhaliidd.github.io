@@ -390,7 +390,7 @@ h1 {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
   margin-bottom: 12px;
 }
 
@@ -727,7 +727,7 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(24px, 7vw, 34px);
+    font-size: clamp(22px, 6vw, 32px);
   }
 
   .subtitle {
@@ -747,7 +747,6 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 6px;
   }
 
   .sectionHeader > a {
@@ -755,7 +754,11 @@ h1 {
   }
 
   .sectionHeader h2 {
-    font-size: 19px;
+    font-size: 18px;
+  }
+
+  .card h3 {
+    font-size: 16px;
   }
 
   .avatar {
@@ -769,7 +772,7 @@ h1 {
 
 @media (max-width: 420px) {
   .brand {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .brandMark {
@@ -784,6 +787,18 @@ h1 {
 
   .navLinks a {
     padding: 7px 9px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 17px;
+  }
+
+  .card h3 {
     font-size: 14px;
   }
 }
