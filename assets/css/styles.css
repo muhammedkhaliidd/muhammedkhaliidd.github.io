@@ -744,13 +744,14 @@ h1 {
   }
 
   .sectionHeader {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 6px;
   }
 
   .sectionHeader > a {
-    align-self: flex-end;
+    align-self: auto;
   }
 
   .sectionHeader h2 {
