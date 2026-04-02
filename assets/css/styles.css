@@ -456,14 +456,135 @@ h1 {
 }
 
 @media (max-width: 900px) {
+  .container {
+    --gutter: 16px;
+  }
+
+  .siteHeader {
+    position: static;
+  }
+
+  .navBar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .brand {
+    justify-self: start;
+  }
+
   .heroGrid {
     grid-template-columns: 1fr;
   }
   .grid2 {
     grid-template-columns: 1fr;
   }
+
   .navLinks {
+    justify-content: flex-start;
     gap: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
+    scrollbar-width: thin;
+  }
+
+  .navLinks a {
+    white-space: nowrap;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .navActions {
+    justify-content: flex-start;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    min-height: 42px;
+  }
+
+  .heroCard,
+  .card {
+    padding: 18px;
+  }
+
+  main {
+    padding: 24px 0 44px;
+  }
+
+  .section {
+    margin-top: 20px;
+  }
+
+  .avatar {
+    width: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    --gutter: 14px;
+  }
+
+  h1 {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .pillRow {
+    gap: 8px;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 19px;
+  }
+
+  .avatar {
+    width: 130px;
+  }
+
+  .small {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand {
+    font-size: 15px;
+  }
+
+  .brandMark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .heroCard,
+  .card {
+    padding: 15px;
+  }
+
+  .navLinks a {
+    padding: 7px 9px;
+    font-size: 14px;
   }
 }
 
