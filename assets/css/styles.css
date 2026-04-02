@@ -129,16 +129,38 @@ a:hover {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
   font-weight: 750;
   letter-spacing: 0.2px;
   color: var(--text);
 }
 
+.brandText {
+  display: grid;
+  line-height: 1.1;
+  gap: 2px;
+}
+
+.brandName {
+  font-size: 15px;
+  font-weight: 760;
+  letter-spacing: 0.2px;
+}
+
+.brandRole {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
 .brandMark {
   width: 34px;
   height: 34px;
-  border-radius: 10px;
+  border-radius: 999px;
   background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 45%, #7c3aed));
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -151,11 +173,22 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.03);
 }
 
 .brand:hover .brandMark {
-  transform: translateY(-1px) rotate(-1deg);
+  transform: translateY(-1px) scale(1.03);
   border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+}
+
+.brand:hover .brandName {
+  color: color-mix(in srgb, var(--text) 85%, var(--accent));
+}
+
+.brand:hover {
+  text-decoration: none;
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
 }
 
 .navLinks {
@@ -168,19 +201,20 @@ a:hover {
 .navLinks a {
   color: var(--muted);
   font-weight: 600;
-  padding: 8px 10px;
-  border-radius: 10px;
+  padding: 9px 2px 8px;
+  border-radius: 0;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  border-bottom: 2px solid transparent;
 }
 
 .navLinks a::before {
   font-family: "Font Awesome 6 Free", sans-serif;
-  font-weight: 900;
-  font-size: 13px;
+  font-weight: 700;
+  font-size: 12px;
   line-height: 1;
-  opacity: 0.9;
+  opacity: 0.72;
 }
 
 .navLinks a[href="index.html"]::before {
@@ -206,15 +240,13 @@ a:hover {
 .navLinks a:hover {
   text-decoration: none;
   color: var(--text);
-  background: color-mix(in srgb, var(--surface) 85%, transparent);
-  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
-  transform: translateY(-1px);
+  border-bottom-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: transparent;
 }
 
 .navLinks a[aria-current="page"] {
-  color: var(--text);
-  background: color-mix(in srgb, var(--surface) 85%, transparent);
-  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  color: color-mix(in srgb, var(--text) 88%, var(--accent));
+  border-bottom-color: var(--accent);
   text-decoration: none;
 }
 
@@ -659,7 +691,8 @@ h1 {
   }
 
   .brand {
-    justify-self: start;
+    justify-self: center;
+    padding: 6px 8px;
   }
 
   .heroGrid {
@@ -683,6 +716,7 @@ h1 {
     min-height: 40px;
     display: inline-flex;
     align-items: center;
+    padding: 8px 2px 9px;
   }
 
   .navActions {
@@ -730,6 +764,7 @@ h1 {
     align-items: flex-start;
   }
 }
+
 
 @media (max-width: 600px) {
   .container {
@@ -782,12 +817,21 @@ h1 {
 
 @media (max-width: 420px) {
   .brand {
+    gap: 8px;
+  }
+
+  .brandName {
     font-size: 14px;
+  }
+
+  .brandRole {
+    display: none;
   }
 
   .brandMark {
     width: 30px;
     height: 30px;
+    border-radius: 999px;
   }
 
   .heroCard,
@@ -796,7 +840,7 @@ h1 {
   }
 
   .navLinks a {
-    padding: 7px 9px;
+    padding: 7px 2px 8px;
     font-size: 14px;
   }
 
