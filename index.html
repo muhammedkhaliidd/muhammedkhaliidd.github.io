@@ -36,6 +36,11 @@
       name="twitter:image"
       content="https://muhammedkhaliidd.github.io/assets/img/headshot.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -66,13 +71,16 @@
           </nav>
 
           <div class="navActions">
-            <button
-              class="btn"
-              type="button"
-              data-theme-toggle
-              aria-pressed="true"
-            >
-              Dark
+            <button class="themeToggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Switch to light mode">
+              <span class="toggleTrack" aria-hidden="true">
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleOrb">
+                  <i class="fa-solid fa-moon toggleOrbIcon toggleOrbIcon--moon" aria-hidden="true"></i>
+                  <i class="fa-solid fa-sun  toggleOrbIcon toggleOrbIcon--sun"  aria-hidden="true"></i>
+                </span>
+              </span>
             </button>
             <a
               class="btn btnPrimary"
@@ -90,7 +98,7 @@
       <section class="hero">
         <div class="container">
           <div class="heroGrid">
-            <div class="heroCard">
+            <div class="heroCard reveal">
               <div class="kicker">
                 <span class="kickerDot" aria-hidden="true"></span> Senior
                 Frontend Developer
@@ -106,6 +114,21 @@
                 releases across Web, iOS, and Android.
               </p>
 
+              <div class="statsRow" aria-label="Career highlights">
+                <div class="stat">
+                  <span class="statNum">5+</span>
+                  <span class="statLabel">Years exp.</span>
+                </div>
+                <div class="stat">
+                  <span class="statNum">7+</span>
+                  <span class="statLabel">Projects</span>
+                </div>
+                <div class="stat">
+                  <span class="statNum">3</span>
+                  <span class="statLabel">Platforms</span>
+                </div>
+              </div>
+
               <div class="pillRow" aria-label="Highlights">
                 <span class="pill"
                   >Architecture • Microfrontends • Module Federation</span
@@ -118,7 +141,7 @@
               </div>
             </div>
 
-            <aside class="heroCard" aria-label="Quick info">
+            <aside class="heroCard reveal" style="transition-delay: 0.1s" aria-label="Quick info">
               <div class="avatarWrap">
                 <img
                   class="avatar"
@@ -187,7 +210,7 @@
             </aside>
           </div>
 
-          <section class="section" aria-label="About me">
+          <section class="section reveal" style="transition-delay: 0.05s" aria-label="About me">
             <div class="sectionHeader">
               <h2 class="titleWithIcon">
                 <i class="fa-solid fa-user titleIcon" aria-hidden="true"></i>
@@ -209,7 +232,7 @@
             </div>
           </section>
 
-          <section class="section" aria-label="Featured projects">
+          <section class="section reveal" style="transition-delay: 0.1s" aria-label="Featured projects">
             <div class="sectionHeader">
               <h2 class="titleWithIcon">
                 <i class="fa-solid fa-star titleIcon" aria-hidden="true"></i>
@@ -218,45 +241,37 @@
               <a class="small" href="projects.html">View all</a>
             </div>
             <div class="grid2">
-              <article class="card">
-                <h3>ATOM CME — Low‑code workflow/builder platform</h3>
-                <div class="meta">
-                  Angular • RxJS • Module Federation • Keycloak • NGXS • PrimeNG
+              <article class="card projectCard projectCard--web reveal" style="transition-delay: 0.05s">
+                <div class="projectCardTop">
+                  <span class="projectType">
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                    Enterprise Web
+                  </span>
                 </div>
+                <h3 class="projectName">ATOM CME</h3>
+                <p class="projectDesc">Low‑code workflow / builder platform</p>
                 <ul class="list">
-                  <li>
-                    Built a low‑code builder UI (drag/drop flow editing +
-                    Monaco-based configuration).
-                  </li>
-                  <li>
-                    Delivered a micro‑frontend suite (host +
-                    workflow/builder/reporting remotes).
-                  </li>
-                  <li>
-                    Integrated secure access with Keycloak (roles, guards,
-                    refresh tokens).
-                  </li>
+                  <li>Built a low‑code builder UI with drag/drop flow editing and Monaco-based configuration.</li>
+                  <li>Delivered a micro‑frontend suite (host + workflow/builder/reporting remotes).</li>
+                  <li>Integrated secure access with Keycloak — roles, guards, and refresh tokens.</li>
                 </ul>
+                <p class="projectStack">Angular · RxJS · Module Federation · Keycloak · NGXS · PrimeNG</p>
               </article>
-              <article class="card">
-                <h3>DYNE APP — Cross‑platform dining experience</h3>
-                <div class="meta">
-                  Angular • RxJS • Pusher • Payment Gateways • Ionic • Capacitor
+              <article class="card projectCard projectCard--mobile reveal" style="transition-delay: 0.1s">
+                <div class="projectCardTop">
+                  <span class="projectType projectType--mobile">
+                    <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                    Cross-platform Mobile
+                  </span>
                 </div>
+                <h3 class="projectName">DYNE APP</h3>
+                <p class="projectDesc">Cross‑platform dining experience</p>
                 <ul class="list">
-                  <li>
-                    Developed reservations, orders, cart flow, live updates, and
-                    multi-method payments.
-                  </li>
-                  <li>
-                    Implemented real-time ordering and checkout interactions
-                    using Pusher.
-                  </li>
-                  <li>
-                    Optimized performance with lazy loading, caching, and module
-                    optimizations.
-                  </li>
+                  <li>Developed reservations, orders, cart flow, live updates, and multi-method payments.</li>
+                  <li>Implemented real-time ordering and checkout interactions using Pusher.</li>
+                  <li>Optimized performance with lazy loading, caching, and module optimizations.</li>
                 </ul>
+                <p class="projectStack">Angular · RxJS · Pusher · Payment Gateways · Ionic · Capacitor</p>
               </article>
             </div>
           </section>

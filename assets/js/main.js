@@ -24,7 +24,7 @@
     if (btn) {
       const isDark = theme === "dark";
       btn.setAttribute("aria-pressed", String(isDark));
-      btn.textContent = isDark ? "Dark" : "Light";
+      btn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
     }
   }
 
@@ -66,5 +66,21 @@
     a.addEventListener("click", () => scrollTabIntoView(a));
     a.addEventListener("focus", () => scrollTabIntoView(a));
   });
+})();
+
+// Scroll-reveal — respects prefers-reduced-motion
+(function () {
+  if (globalThis.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const observer = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          observer.unobserve(e.target);
+        }
+      }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 })();
 

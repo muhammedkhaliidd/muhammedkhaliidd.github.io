@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projects | Muhammed Khalid</title>
     <meta name="description" content="Selected projects and highlights." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="icon" type="image/png" href="assets/img/headshot.png" />
     <link rel="apple-touch-icon" href="assets/img/headshot.png" />
@@ -32,13 +37,16 @@
           </nav>
 
           <div class="navActions">
-            <button
-              class="btn"
-              type="button"
-              data-theme-toggle
-              aria-pressed="true"
-            >
-              Dark
+            <button class="themeToggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Switch to light mode">
+              <span class="toggleTrack" aria-hidden="true">
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleOrb">
+                  <i class="fa-solid fa-moon toggleOrbIcon toggleOrbIcon--moon" aria-hidden="true"></i>
+                  <i class="fa-solid fa-sun  toggleOrbIcon toggleOrbIcon--sun"  aria-hidden="true"></i>
+                </span>
+              </span>
             </button>
             <a
               class="btn btnPrimary"
@@ -54,240 +62,168 @@
 
     <main id="content">
       <div class="container">
-        <section class="section" style="margin-top: 0">
-          <div class="sectionHeader">
-            <h2 class="titleWithIcon">
-              <i class="fa-solid fa-diagram-project titleIcon" aria-hidden="true"></i>
-              Projects
-            </h2>
-            <div class="small" style="color: var(--muted)">
-              Angular projects with real‑time features.
-            </div>
-          </div>
+        <div class="pageHero reveal">
+          <h1 class="pageHeroTitle">Projects</h1>
+          <p class="pageHeroSub">Angular projects with real‑time features.</p>
+        </div>
 
+        <section class="section">
           <div class="grid2">
-            <article class="card">
-              <h3>ATOM CME — Low‑code workflow/builder platform</h3>
-              <div class="meta">
-                Angular • RxJS • Module Federation • Keycloak • NGXS • PrimeNG •
-                REST APIs
+
+            <!-- ATOM CME -->
+            <article class="card projectCard projectCard--web reveal" style="transition-delay: 0.05s">
+              <div class="projectCardTop">
+                <span class="projectType">
+                  <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                  Enterprise Web
+                </span>
               </div>
+              <h3 class="projectName">ATOM CME</h3>
+              <p class="projectDesc">Low‑code workflow / builder platform</p>
               <ul class="list">
-                <li>
-                  Built a low‑code builder UI (drag/drop flow editing +
-                  Monaco-based configuration).
-                </li>
-                <li>
-                  Delivered a micro‑frontend suite (host +
-                  workflow/builder/reporting remotes).
-                </li>
-                <li>
-                  Integrated secure access with Keycloak (tokens/refresh, roles,
-                  route guards).
-                </li>
+                <li>Built a low‑code builder UI with drag/drop flow editing and Monaco-based configuration.</li>
+                <li>Delivered a micro‑frontend suite (host + workflow/builder/reporting remotes).</li>
+                <li>Integrated secure access with Keycloak — roles, guards, and refresh tokens.</li>
               </ul>
+              <p class="projectStack">Angular · RxJS · Module Federation · Keycloak · NGXS · PrimeNG · REST API</p>
             </article>
 
-            <article class="card">
-              <h3>ATOM PORTAL — Operator-facing web platform</h3>
-              <div class="meta">
-                Angular • RxJS • Module Federation • SignalR • Role-based access
-                • REST API
+            <!-- ATOM PORTAL -->
+            <article class="card projectCard projectCard--web reveal" style="transition-delay: 0.1s">
+              <div class="projectCardTop">
+                <span class="projectType">
+                  <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                  Enterprise Web
+                </span>
               </div>
+              <h3 class="projectName">ATOM PORTAL</h3>
+              <p class="projectDesc">Operator-facing web platform</p>
               <ul class="list">
-                <li>
-                  Built the operator portal for a low-code builder platform.
-                </li>
+                <li>Built the operator portal for a low-code builder platform.</li>
                 <li>Delivered micro-frontends using Module Federation.</li>
                 <li>Added real-time updates with SignalR and RxJS.</li>
               </ul>
+              <p class="projectStack">Angular · RxJS · Module Federation · SignalR · Role-based access · REST API</p>
             </article>
 
-            <article class="card">
-              <h3>DYNE APP — Cross‑platform dining experience</h3>
-              <div class="meta">
-                Angular • RxJS • Pusher • Payment Gateways • Ionic • Capacitor •
-                REST API
+            <!-- DYNE APP -->
+            <article class="card projectCard projectCard--mobile reveal" style="transition-delay: 0.05s">
+              <div class="projectCardTop">
+                <span class="projectType projectType--mobile">
+                  <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                  Cross-platform Mobile
+                </span>
               </div>
+              <h3 class="projectName">DYNE APP</h3>
+              <p class="projectDesc">Cross‑platform dining experience</p>
               <ul class="list">
-                <li>
-                  Developed reservations, orders, cart flow, live updates, and
-                  multi-method payments.
-                </li>
+                <li>Developed reservations, orders, cart flow, live updates, and multi-method payments.</li>
                 <li>Implemented real-time interactions using Pusher.</li>
-                <li>
-                  Optimized performance (lazy loading, caching, module
-                  optimizations).
-                </li>
+                <li>Optimized performance — lazy loading, caching, and module optimizations.</li>
               </ul>
-              <div class="tagRow" aria-label="DYNE app links">
-                <a
-                  class="tag"
-                  href="https://apps.apple.com/eg/app/dyne/id1664928675"
-                  target="_blank"
-                  rel="noreferrer"
-                  ><i class="fa-brands fa-apple" aria-hidden="true"></i> App
-                  Store</a
-                >
-                <a
-                  class="tag"
-                  href="https://play.google.com/store/apps/details?id=com.dynedigital.app"
-                  target="_blank"
-                  rel="noreferrer"
-                  ><i class="fa-brands fa-google-play" aria-hidden="true"></i>
-                  Google Play</a
-                >
+              <p class="projectStack">Angular · RxJS · Pusher · Payment Gateways · Ionic · Capacitor · REST API</p>
+              <div class="tagRow projectLinks" aria-label="DYNE app links">
+                <a class="tag" href="https://apps.apple.com/eg/app/dyne/id1664928675" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store</a>
+                <a class="tag" href="https://play.google.com/store/apps/details?id=com.dynedigital.app" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
               </div>
             </article>
 
-            <article class="card">
-              <h3>DYNE DASHBOARD — Multi‑module operational dashboard</h3>
-              <div class="meta">
-                Angular • Angular Material • Signals • RxJS • Pusher • Bootstrap
-                • REST API
+            <!-- DYNE DASHBOARD -->
+            <article class="card projectCard projectCard--dashboard reveal" style="transition-delay: 0.1s">
+              <div class="projectCardTop">
+                <span class="projectType projectType--dashboard">
+                  <i class="fa-solid fa-table-columns" aria-hidden="true"></i>
+                  Dashboard
+                </span>
               </div>
+              <h3 class="projectName">DYNE DASHBOARD</h3>
+              <p class="projectDesc">Multi‑module operational dashboard</p>
               <ul class="list">
-                <li>
-                  Built a scalable admin dashboard for restaurants to control
-                  operational modules in real time.
-                </li>
-                <li>
-                  Implemented reusable components, advanced filtering, and fast
-                  data visualization.
-                </li>
-                <li>
-                  Integrated real-time updates to reflect live order and
-                  operations status.
-                </li>
+                <li>Built a scalable admin dashboard for restaurants to control operational modules in real time.</li>
+                <li>Implemented reusable components, advanced filtering, and fast data visualization.</li>
+                <li>Integrated real-time updates to reflect live order and operations status.</li>
               </ul>
-              <div class="tagRow" aria-label="DYNE dashboard links">
-                <a
-                  class="tag"
-                  href="https://dashboard.dyneapp.io/auth"
-                  target="_blank"
-                  rel="noreferrer"
-                  ><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
-                  Live dashboard</a
-                >
+              <p class="projectStack">Angular · Angular Material · Signals · RxJS · Pusher · Bootstrap · REST API</p>
+              <div class="tagRow projectLinks" aria-label="DYNE dashboard links">
+                <a class="tag" href="https://dashboard.dyneapp.io/auth" target="_blank" rel="noreferrer"
+                  ><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Live dashboard</a>
               </div>
             </article>
 
-            <article class="card">
-              <h3>E-خدمات — Government services platforms</h3>
-              <div class="meta">
-                Angular • Ionic • Capacitor • RxJS • FCM • REST API
+            <!-- E-خدمات -->
+            <article class="card projectCard projectCard--mobile reveal" style="transition-delay: 0.05s">
+              <div class="projectCardTop">
+                <span class="projectType projectType--mobile">
+                  <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                  Cross-platform Mobile
+                </span>
               </div>
+              <h3 class="projectName">E-خدمات</h3>
+              <p class="projectDesc">Government services platforms</p>
               <ul class="list">
-                <li>
-                  Developed cross-platform mobile apps for project tracking,
-                  submissions, and digital workflows.
-                </li>
-                <li>
-                  Implemented dashboards, statistics, user flows, and
-                  offline-ready features.
-                </li>
-                <li>
-                  Ensured stable performance across Android & iOS and handled
-                  store deployments.
-                </li>
+                <li>Developed cross-platform mobile apps for project tracking, submissions, and digital workflows.</li>
+                <li>Implemented dashboards, statistics, user flows, and offline-ready features.</li>
+                <li>Ensured stable performance across Android & iOS and handled store deployments.</li>
               </ul>
-              <div class="tagRow" aria-label="E-Khadamat app links">
-                <a
-                  class="tag"
-                  href="https://apps.apple.com/eg/app/e-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/id1635048131"
-                  target="_blank"
-                  rel="noreferrer"
-                  ><i class="fa-brands fa-apple" aria-hidden="true"></i> App
-                  Store</a
-                >
-                <a
-                  class="tag"
-                  href="https://play.google.com/store/apps/details?id=com.asyadcapital.ekhadamat"
-                  target="_blank"
-                  rel="noreferrer"
-                  ><i class="fa-brands fa-google-play" aria-hidden="true"></i>
-                  Google Play</a
-                >
+              <p class="projectStack">Angular · Ionic · Capacitor · RxJS · FCM · REST API</p>
+              <div class="tagRow projectLinks" aria-label="E-Khadamat app links">
+                <a class="tag" href="https://apps.apple.com/eg/app/e-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/id1635048131" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store</a>
+                <a class="tag" href="https://play.google.com/store/apps/details?id=com.asyadcapital.ekhadamat" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
               </div>
             </article>
 
-            <article class="card">
-              <h3>ISCOPE INSPECTION — Field inspection mobile app</h3>
-              <div class="meta">
-                Angular • Ionic • Capacitor • Cordova • RxJS • FCM • REST API
+            <!-- ISCOPE INSPECTION -->
+            <article class="card projectCard projectCard--mobile reveal" style="transition-delay: 0.1s">
+              <div class="projectCardTop">
+                <span class="projectType projectType--mobile">
+                  <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                  Cross-platform Mobile
+                </span>
               </div>
+              <h3 class="projectName">ISCOPE INSPECTION</h3>
+              <p class="projectDesc">Field inspection mobile app</p>
               <ul class="list">
-                <li>
-                  Developed modules for field inspections, on-site data entry,
-                  and media capture.
-                </li>
-                <li>
-                  Integrated native device features (camera, file storage,
-                  offline caching).
-                </li>
-                <li>
-                  Improved workflow speed by optimizing form rendering and
-                  reducing UI latency.
-                </li>
+                <li>Developed modules for field inspections, on-site data entry, and media capture.</li>
+                <li>Integrated native device features — camera, file storage, and offline caching.</li>
+                <li>Improved workflow speed by optimizing form rendering and reducing UI latency.</li>
               </ul>
-              <div class="tagRow" aria-label="ISCOPE inspection app links">
-                <a
-                  class="tag"
-                  href="https://apps.apple.com/eg/app/iscope-inspection/id1564464064"
-                  target="_blank"
-                  rel="noreferrer"
-                  ><i class="fa-brands fa-apple" aria-hidden="true"></i> App
-                  Store</a
-                >
-                <a
-                  class="tag"
-                  href="https://play.google.com/store/apps/details?id=asyadcapital.com.iscopeinspection2cross"
-                  target="_blank"
-                  rel="noreferrer"
-                  ><i class="fa-brands fa-google-play" aria-hidden="true"></i>
-                  Google Play</a
-                >
+              <p class="projectStack">Angular · Ionic · Capacitor · Cordova · RxJS · FCM · REST API</p>
+              <div class="tagRow projectLinks" aria-label="ISCOPE inspection app links">
+                <a class="tag" href="https://apps.apple.com/eg/app/iscope-inspection/id1564464064" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store</a>
+                <a class="tag" href="https://play.google.com/store/apps/details?id=asyadcapital.com.iscopeinspection2cross" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
               </div>
             </article>
 
-            <article class="card">
-              <h3>ISCOPE REPORT — Project status & reporting platform</h3>
-              <div class="meta">
-                Angular • Ionic • Capacitor • Cordova • RxJS • FCM • REST API
+            <!-- ISCOPE REPORT -->
+            <article class="card projectCard projectCard--mobile reveal" style="transition-delay: 0.05s">
+              <div class="projectCardTop">
+                <span class="projectType projectType--mobile">
+                  <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                  Cross-platform Mobile
+                </span>
               </div>
+              <h3 class="projectName">ISCOPE REPORT</h3>
+              <p class="projectDesc">Project status & reporting platform</p>
               <ul class="list">
-                <li>
-                  Built features for reporting, project monitoring, and viewing
-                  detailed statistics.
-                </li>
-                <li>
-                  Implemented structured navigation and fast-loading data views
-                  for large datasets.
-                </li>
-                <li>
-                  Ensured stable performance and compatibility across Android &
-                  iOS, including store deployment.
-                </li>
+                <li>Built features for reporting, project monitoring, and viewing detailed statistics.</li>
+                <li>Implemented structured navigation and fast-loading data views for large datasets.</li>
+                <li>Ensured stable performance and compatibility across Android & iOS, including store deployment.</li>
               </ul>
-              <div class="tagRow" aria-label="ISCOPE report app links">
-                <a
-                  class="tag"
-                  href="https://apps.apple.com/eg/app/iscope-report/id1539323076"
-                  target="_blank"
-                  rel="noreferrer"
-                  ><i class="fa-brands fa-apple" aria-hidden="true"></i> App
-                  Store</a
-                >
-                <a
-                  class="tag"
-                  href="https://play.google.com/store/apps/details?id=com.asyadcapital.iscopereport2cross"
-                  target="_blank"
-                  rel="noreferrer"
-                  ><i class="fa-brands fa-google-play" aria-hidden="true"></i>
-                  Google Play</a
-                >
+              <p class="projectStack">Angular · Ionic · Capacitor · Cordova · RxJS · FCM · REST API</p>
+              <div class="tagRow projectLinks" aria-label="ISCOPE report app links">
+                <a class="tag" href="https://apps.apple.com/eg/app/iscope-report/id1539323076" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store</a>
+                <a class="tag" href="https://play.google.com/store/apps/details?id=com.asyadcapital.iscopereport2cross" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play</a>
               </div>
             </article>
+
           </div>
         </section>
       </div>

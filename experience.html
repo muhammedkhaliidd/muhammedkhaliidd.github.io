@@ -4,8 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Experience | Muhammed Khalid</title>
-    <meta name="description" content="Professional experience and responsibilities." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <meta
+      name="description"
+      content="Professional experience and responsibilities."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <link rel="icon" type="image/png" href="assets/img/headshot.png" />
     <link rel="apple-touch-icon" href="assets/img/headshot.png" />
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -20,7 +31,10 @@
             <span class="brandMark" aria-hidden="true">
               <img src="assets/img/headshot.png" alt="" />
             </span>
-            <span class="brandText"><span class="brandName">Muhammed Khalid</span><span class="brandRole">Senior Frontend Developer</span></span>
+            <span class="brandText"
+              ><span class="brandName">Muhammed Khalid</span
+              ><span class="brandRole">Senior Frontend Developer</span></span
+            >
           </a>
 
           <nav class="navLinks" aria-label="Primary">
@@ -32,7 +46,17 @@
           </nav>
 
           <div class="navActions">
-            <button class="btn" type="button" data-theme-toggle aria-pressed="true">Dark</button>
+            <button class="themeToggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Switch to light mode">
+              <span class="toggleTrack" aria-hidden="true">
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleOrb">
+                  <i class="fa-solid fa-moon toggleOrbIcon toggleOrbIcon--moon" aria-hidden="true"></i>
+                  <i class="fa-solid fa-sun  toggleOrbIcon toggleOrbIcon--sun"  aria-hidden="true"></i>
+                </span>
+              </span>
+            </button>
             <a
               class="btn btnPrimary"
               href="https://drive.google.com/uc?export=download&id=1ogMhPn9wdrZe2wG6lk75J7KMx99sVMgh"
@@ -47,35 +71,48 @@
 
     <main id="content">
       <div class="container">
-        <section class="section" style="margin-top: 0">
-          <div class="sectionHeader">
-            <h2 class="titleWithIcon">
-              <i class="fa-solid fa-briefcase titleIcon" aria-hidden="true"></i>
-              Experience
-            </h2>
-            <div class="small" style="color: var(--muted)">Angular • Ionic • Architecture • Performance</div>
-          </div>
+        <div class="pageHero reveal">
+          <h1 class="pageHeroTitle">Experience</h1>
+          <p class="pageHeroSub">
+            Angular • Architecture • Microfrontends • Performance • Ionic
+          </p>
+        </div>
 
-          <div class="grid2">
-            <article class="card">
+        <section class="section">
+          <div class="timeline">
+            <article
+              class="card timelineItem reveal"
+              style="transition-delay: 0.05s"
+            >
               <div class="expCardHead">
                 <h3>Senior Frontend Developer — CAELUM GROUP GMBH</h3>
-                <a
-                  class="expCompanyLinkTop"
-                  href="https://www.linkedin.com/company/caelumgroup/posts/?feedView=all"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="CAELUM GROUP GMBH on LinkedIn"
-                  ><i class="fa-brands fa-linkedin" aria-hidden="true"></i
-                ></a>
+                <div class="expCompanyLinks">
+                  <a class="expCompanyLinkTop" href="https://www.caelumgroup.mx/en" target="_blank" rel="noreferrer" aria-label="CAELUM GROUP GMBH website"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+                  <a class="expCompanyLinkTop" href="https://www.linkedin.com/company/caelumgroup/posts/?feedView=all" target="_blank" rel="noreferrer" aria-label="CAELUM GROUP GMBH on LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                </div>
               </div>
               <div class="meta">Feb 2026 – Present</div>
               <ul class="list">
-                <li>Leading frontend architecture for scalable Angular applications in a distributed environment.</li>
-                <li>Implementing micro frontend architecture using Module Federation.</li>
-                <li>Driving performance optimization (lazy loading, code splitting, caching) across projects.</li>
-                <li>Building reusable component libraries and enforcing design system consistency.</li>
-                <li>Mentoring developers and leading code reviews to ensure high code quality.</li>
+                <li>
+                  Leading frontend architecture for scalable Angular
+                  applications in a distributed environment.
+                </li>
+                <li>
+                  Implementing micro frontend architecture using Module
+                  Federation.
+                </li>
+                <li>
+                  Driving performance optimization (lazy loading, code
+                  splitting, caching) across projects.
+                </li>
+                <li>
+                  Building reusable component libraries and enforcing design
+                  system consistency.
+                </li>
+                <li>
+                  Mentoring developers and leading code reviews to ensure high
+                  code quality.
+                </li>
               </ul>
               <div class="tagRow">
                 <span class="tag">Angular</span>
@@ -87,26 +124,43 @@
               </div>
             </article>
 
-            <article class="card">
+            <article
+              class="card timelineItem reveal"
+              style="transition-delay: 0.1s"
+            >
               <div class="expCardHead">
                 <h3>Senior Frontend Developer — DYNE</h3>
-                <a
-                  class="expCompanyLinkTop"
-                  href="https://www.linkedin.com/company/dynesocialapp/posts/?feedView=all"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="DYNE on LinkedIn"
-                  ><i class="fa-brands fa-linkedin" aria-hidden="true"></i
-                ></a>
+                <div class="expCompanyLinks">
+                  <a class="expCompanyLinkTop" href="https://www.dynenow.com/" target="_blank" rel="noreferrer" aria-label="DYNE website"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+                  <a class="expCompanyLinkTop" href="https://www.linkedin.com/company/dynesocialapp/posts/?feedView=all" target="_blank" rel="noreferrer" aria-label="DYNE on LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                </div>
               </div>
               <div class="meta">Dec 2023 – Feb 2026</div>
               <ul class="list">
-                <li>Led development of scalable cross-platform applications (Web, iOS, Android) using Angular, Ionic, and Capacitor.</li>
-                <li>Owned frontend architecture with modular design and structured state management.</li>
-                <li>Implemented real-time features via Pusher and optimized performance (lazy loading, caching, bundle size).</li>
-                <li>Integrated payment gateways and ensured secure, reliable checkout flows.</li>
-                <li>Managed mobile build and release pipelines for App Store and Google Play.</li>
-                <li>Mentored developers, led code reviews, and collaborated cross-functionally.</li>
+                <li>
+                  Led development of scalable cross-platform applications (Web,
+                  iOS, Android) using Angular, Ionic, and Capacitor.
+                </li>
+                <li>
+                  Owned frontend architecture with modular design and structured
+                  state management.
+                </li>
+                <li>
+                  Implemented real-time features via Pusher and optimized
+                  performance (lazy loading, caching, bundle size).
+                </li>
+                <li>
+                  Integrated payment gateways and ensured secure, reliable
+                  checkout flows.
+                </li>
+                <li>
+                  Managed mobile build and release pipelines for App Store and
+                  Google Play.
+                </li>
+                <li>
+                  Mentored developers, led code reviews, and collaborated
+                  cross-functionally.
+                </li>
               </ul>
               <div class="tagRow">
                 <span class="tag">Angular</span>
@@ -118,24 +172,35 @@
               </div>
             </article>
 
-            <article class="card">
+            <article
+              class="card timelineItem reveal"
+              style="transition-delay: 0.15s"
+            >
               <div class="expCardHead">
                 <h3>Frontend / Cross‑platform Developer — SYADTECH</h3>
-                <a
-                  class="expCompanyLinkTop"
-                  href="https://www.linkedin.com/company/syadtech/posts/?feedView=all"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="SYADTECH on LinkedIn"
-                  ><i class="fa-brands fa-linkedin" aria-hidden="true"></i
-                ></a>
+                <div class="expCompanyLinks">
+                  <a class="expCompanyLinkTop" href="https://syadtech.com/" target="_blank" rel="noreferrer" aria-label="SYADTECH website"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+                  <a class="expCompanyLinkTop" href="https://www.linkedin.com/company/syadtech/posts/?feedView=all" target="_blank" rel="noreferrer" aria-label="SYADTECH on LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                </div>
               </div>
               <div class="meta">Apr 2022 – Dec 2023</div>
               <ul class="list">
-                <li>Developed cross-platform mobile applications using Angular and Ionic integrated with REST APIs.</li>
-                <li>Built reusable UI components and improved modular architecture for scalable feature development.</li>
-                <li>Integrated native device capabilities via Capacitor/Cordova (camera, storage, notifications).</li>
-                <li>Optimized performance for low- and mid-range devices and handled production releases.</li>
+                <li>
+                  Developed cross-platform mobile applications using Angular and
+                  Ionic integrated with REST APIs.
+                </li>
+                <li>
+                  Built reusable UI components and improved modular architecture
+                  for scalable feature development.
+                </li>
+                <li>
+                  Integrated native device capabilities via Capacitor/Cordova
+                  (camera, storage, notifications).
+                </li>
+                <li>
+                  Optimized performance for low- and mid-range devices and
+                  handled production releases.
+                </li>
               </ul>
               <div class="tagRow">
                 <span class="tag">Angular</span>
@@ -146,14 +211,30 @@
               </div>
             </article>
 
-            <article class="card">
+            <article
+              class="card timelineItem reveal"
+              style="transition-delay: 0.2s"
+            >
               <h3>Frontend Developer — Freelancer</h3>
               <div class="meta">Jul 2021 – Present</div>
               <ul class="list">
-                <li>Delivered web and mobile applications using Angular, React, and Ionic for multiple clients.</li>
-                <li>Built and deployed end-to-end Ionic applications (UI, API integration, testing, and store publishing).</li>
-                <li>Integrated third-party services such as Firebase and Stripe for authentication, payments, and real-time features.</li>
-                <li>Translated business requirements into responsive, high-performance user interfaces and managed client communication.</li>
+                <li>
+                  Delivered web and mobile applications using Angular, React,
+                  and Ionic for multiple clients.
+                </li>
+                <li>
+                  Built and deployed end-to-end Ionic applications (UI, API
+                  integration, testing, and store publishing).
+                </li>
+                <li>
+                  Integrated third-party services such as Firebase and Stripe
+                  for authentication, payments, and real-time features.
+                </li>
+                <li>
+                  Translated business requirements into responsive,
+                  high-performance user interfaces and managed client
+                  communication.
+                </li>
               </ul>
               <div class="tagRow">
                 <span class="tag">Angular</span>
@@ -181,8 +262,18 @@
           <div class="footerLinks small">
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
-            <a href="https://www.linkedin.com/in/muhammedkhaliid/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://github.com/muhammedkhaliidd" target="_blank" rel="noreferrer">GitHub</a>
+            <a
+              href="https://www.linkedin.com/in/muhammedkhaliid/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+            <a
+              href="https://github.com/muhammedkhaliidd"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub</a
+            >
             <a
               href="https://drive.google.com/file/d/1ogMhPn9wdrZe2wG6lk75J7KMx99sVMgh/view?usp=sharing"
               target="_blank"
@@ -193,10 +284,11 @@
         </div>
       </div>
       <script>
-        document.getElementById("y").textContent = String(new Date().getFullYear());
+        document.getElementById("y").textContent = String(
+          new Date().getFullYear(),
+        );
       </script>
       <script src="assets/js/main.js"></script>
     </footer>
   </body>
 </html>
-

@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About | Muhammed Khalid</title>
     <meta name="description" content="Skills, education, and background." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="icon" type="image/png" href="assets/img/headshot.png" />
     <link rel="apple-touch-icon" href="assets/img/headshot.png" />
@@ -32,7 +37,17 @@
           </nav>
 
           <div class="navActions">
-            <button class="btn" type="button" data-theme-toggle aria-pressed="true">Dark</button>
+            <button class="themeToggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Switch to light mode">
+              <span class="toggleTrack" aria-hidden="true">
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleOrb">
+                  <i class="fa-solid fa-moon toggleOrbIcon toggleOrbIcon--moon" aria-hidden="true"></i>
+                  <i class="fa-solid fa-sun  toggleOrbIcon toggleOrbIcon--sun"  aria-hidden="true"></i>
+                </span>
+              </span>
+            </button>
             <a
               class="btn btnPrimary"
               href="https://drive.google.com/uc?export=download&id=1ogMhPn9wdrZe2wG6lk75J7KMx99sVMgh"
@@ -47,16 +62,13 @@
 
     <main id="content">
       <div class="container">
-        <section class="section" style="margin-top: 0">
-          <div class="sectionHeader">
-            <h2 class="titleWithIcon">
-              <i class="fa-solid fa-circle-info titleIcon" aria-hidden="true"></i>
-              About
-            </h2>
-            <div class="small" style="color: var(--muted)">Skills • Education • Languages</div>
-          </div>
+        <div class="pageHero reveal">
+          <h1 class="pageHeroTitle">About</h1>
+          <p class="pageHeroSub">Skills • Education • Languages</p>
+        </div>
 
-          <div class="heroCard" style="margin-bottom: 14px">
+        <section class="section">
+          <div class="heroCard reveal" style="margin-bottom: 14px">
             <p style="margin: 0; color: var(--text)">
               Senior Frontend Developer specializing in Angular with 5+ years building scalable, high‑performance web and
               cross‑platform (iOS/Android) applications. I focus on frontend architecture, modular design, and state
@@ -69,8 +81,8 @@
           </div>
 
           <div class="grid2">
-            <article class="card">
-              <h3>Frontend</h3>
+            <article class="card reveal" style="transition-delay: 0.05s">
+              <h3 class="titleWithIcon"><i class="fa-solid fa-code titleIcon" aria-hidden="true"></i> Frontend</h3>
               <div class="meta">Core stack</div>
               <div class="tagRow">
                 <span class="tag">Angular</span>
@@ -86,8 +98,8 @@
               </div>
             </article>
 
-            <article class="card">
-              <h3>Mobile</h3>
+            <article class="card reveal" style="transition-delay: 0.1s">
+              <h3 class="titleWithIcon"><i class="fa-solid fa-mobile-screen-button titleIcon" aria-hidden="true"></i> Mobile</h3>
               <div class="meta">Cross-platform delivery</div>
               <div class="tagRow">
                 <span class="tag">Ionic (Angular)</span>
@@ -97,8 +109,8 @@
               </div>
             </article>
 
-            <article class="card">
-              <h3>State & architecture</h3>
+            <article class="card reveal" style="transition-delay: 0.05s">
+              <h3 class="titleWithIcon"><i class="fa-solid fa-sitemap titleIcon" aria-hidden="true"></i> State & architecture</h3>
               <div class="meta">Scalable patterns</div>
               <div class="tagRow">
                 <span class="tag">NgRx</span>
@@ -112,8 +124,8 @@
               </div>
             </article>
 
-            <article class="card">
-              <h3>APIs & integration</h3>
+            <article class="card reveal" style="transition-delay: 0.1s">
+              <h3 class="titleWithIcon"><i class="fa-solid fa-plug titleIcon" aria-hidden="true"></i> APIs & integration</h3>
               <div class="meta">Backend connectivity</div>
               <div class="tagRow">
                 <span class="tag">REST APIs</span>
@@ -124,8 +136,8 @@
               </div>
             </article>
 
-            <article class="card">
-              <h3>Tools & DevOps</h3>
+            <article class="card reveal" style="transition-delay: 0.05s">
+              <h3 class="titleWithIcon"><i class="fa-solid fa-screwdriver-wrench titleIcon" aria-hidden="true"></i> Tools & DevOps</h3>
               <div class="meta">Workflow</div>
               <div class="tagRow">
                 <span class="tag">Git</span>
@@ -136,8 +148,8 @@
               </div>
             </article>
 
-            <article class="card">
-              <h3>Programming</h3>
+            <article class="card reveal" style="transition-delay: 0.1s">
+              <h3 class="titleWithIcon"><i class="fa-solid fa-terminal titleIcon" aria-hidden="true"></i> Programming</h3>
               <div class="meta">Foundations</div>
               <div class="tagRow">
                 <span class="tag">TypeScript</span>
@@ -151,14 +163,14 @@
 
         <section class="section" aria-label="Education and languages">
           <div class="grid2">
-            <article class="card">
+            <article class="card reveal" style="transition-delay: 0.05s">
               <h3>Education</h3>
               <div class="meta">Benha University</div>
               <ul class="list">
                 <li>Bachelor, Faculty of Computers & Artificial Intelligence (2019)</li>
               </ul>
             </article>
-            <article class="card">
+            <article class="card reveal" style="transition-delay: 0.1s">
               <h3>Languages</h3>
               <div class="meta">Communication</div>
               <ul class="list">
@@ -169,7 +181,7 @@
           </div>
         </section>
 
-        <section class="section" aria-label="Courses">
+        <section class="section reveal" aria-label="Courses">
           <div class="sectionHeader">
             <h2 class="titleWithIcon">
               <i class="fa-solid fa-graduation-cap titleIcon" aria-hidden="true"></i>
@@ -177,15 +189,15 @@
             </h2>
           </div>
           <div class="grid2">
-            <article class="card">
+            <article class="card reveal" style="transition-delay: 0.05s">
               <h3>Cross‑platform (Android, iOS, Web) Apps with Ionic & Angular</h3>
               <div class="meta">Udemy • Feb 2022 – Mar 2022</div>
             </article>
-            <article class="card">
+            <article class="card reveal" style="transition-delay: 0.1s">
               <h3>Android Nanodegree</h3>
               <div class="meta">Next Technology Leaders (NTL), TIEC • Jan 2018 – Jul 2018</div>
             </article>
-            <article class="card">
+            <article class="card reveal" style="transition-delay: 0.15s">
               <h3>Frontend Web Development Stack</h3>
               <div class="meta">ITI • Jun 2018 – Sep 2018</div>
             </article>
@@ -224,4 +236,3 @@
     </footer>
   </body>
 </html>
-

@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contact | Muhammed Khalid</title>
     <meta name="description" content="Contact details and links." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="icon" type="image/png" href="assets/img/headshot.png" />
     <link rel="apple-touch-icon" href="assets/img/headshot.png" />
@@ -32,7 +37,17 @@
           </nav>
 
           <div class="navActions">
-            <button class="btn" type="button" data-theme-toggle aria-pressed="true">Dark</button>
+            <button class="themeToggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Switch to light mode">
+              <span class="toggleTrack" aria-hidden="true">
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleStar"></span>
+                <span class="toggleOrb">
+                  <i class="fa-solid fa-moon toggleOrbIcon toggleOrbIcon--moon" aria-hidden="true"></i>
+                  <i class="fa-solid fa-sun  toggleOrbIcon toggleOrbIcon--sun"  aria-hidden="true"></i>
+                </span>
+              </span>
+            </button>
             <a
               class="btn btnPrimary"
               href="https://drive.google.com/uc?export=download&id=1ogMhPn9wdrZe2wG6lk75J7KMx99sVMgh"
@@ -47,24 +62,21 @@
 
     <main id="content">
       <div class="container">
-        <section class="section" style="margin-top: 0">
-          <div class="sectionHeader">
-            <h2 class="titleWithIcon">
-              <i class="fa-solid fa-address-card titleIcon" aria-hidden="true"></i>
-              Contact
-            </h2>
-            <div class="small" style="color: var(--muted)">Get in touch</div>
-          </div>
+        <div class="pageHero reveal">
+          <h1 class="pageHeroTitle">Contact</h1>
+          <p class="pageHeroSub">Get in touch</p>
+        </div>
 
+        <section class="section">
           <div class="grid2">
-            <article class="card contactCard">
+            <article class="card contactCard contactCard--location reveal" style="transition-delay: 0.05s">
               <h3 class="titleWithIcon"><i class="fa-solid fa-location-dot titleIcon" aria-hidden="true"></i>Location</h3>
               <div class="meta">Cairo, Egypt</div>
               <p class="contactValue">On‑site / Hybrid / Remote</p>
               <p class="small contactNote">Open to local and remote opportunities.</p>
             </article>
 
-            <article class="card contactCard hasAction">
+            <article class="card contactCard hasAction contactCard--email reveal" style="transition-delay: 0.1s">
               <p class="contactActionTop">
                 <a class="btn btnPrimary" href="mailto:Mohamedkhaled303110@gmail.com">Send email</a>
               </p>
@@ -78,7 +90,7 @@
               </p>
             </article>
 
-            <article class="card contactCard hasAction">
+            <article class="card contactCard hasAction contactCard--phone reveal" style="transition-delay: 0.05s">
               <p class="contactActionTop">
                 <a class="btn btnPrimary" href="https://wa.me/201551109704" target="_blank" rel="noreferrer">Open WhatsApp</a>
               </p>
@@ -92,7 +104,7 @@
               </p>
             </article>
 
-            <article class="card contactCard hasAction">
+            <article class="card contactCard hasAction contactCard--linkedin reveal" style="transition-delay: 0.1s">
               <p class="contactActionTop">
                 <a class="btn btnPrimary" href="https://www.linkedin.com/in/muhammedkhaliid/" target="_blank" rel="noreferrer"
                   >Open LinkedIn</a
@@ -108,7 +120,7 @@
               </p>
             </article>
 
-            <article class="card contactCard hasAction">
+            <article class="card contactCard hasAction contactCard--github reveal" style="transition-delay: 0.05s">
               <p class="contactActionTop">
                 <a class="btn btnPrimary" href="https://github.com/muhammedkhaliidd" target="_blank" rel="noreferrer"
                   >Open GitHub</a
@@ -124,7 +136,7 @@
               </p>
             </article>
 
-            <article class="card contactCard hasAction">
+            <article class="card contactCard hasAction contactCard--cv reveal" style="transition-delay: 0.1s">
               <p class="contactActionTop">
                 <a
                   class="btn btnPrimary"
@@ -178,4 +190,3 @@
     </footer>
   </body>
 </html>
-

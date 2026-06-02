@@ -8,6 +8,7 @@
   --border: #22304a;
   --accent: #22d3ee;
   --accentHover: #06b6d4;
+  --purple: #7c3aed;
 
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --radius: 16px;
@@ -46,13 +47,26 @@ html[data-theme="light"] {
 
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
     "Apple Color Emoji", "Segoe UI Emoji";
-  background: radial-gradient(1100px 600px at 20% -10%, rgba(34, 211, 238, 0.18), transparent 60%),
-    radial-gradient(900px 600px at 90% 0%, rgba(34, 211, 238, 0.12), transparent 55%),
+  background:
+    radial-gradient(900px 700px at 12% -8%, rgba(34, 211, 238, 0.15), transparent 55%),
+    radial-gradient(700px 500px at 92% 5%, rgba(124, 58, 237, 0.11), transparent 50%),
+    radial-gradient(600px 400px at 50% 105%, rgba(34, 211, 238, 0.06), transparent 60%),
     var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+html[data-theme="light"] body {
+  background:
+    radial-gradient(900px 700px at 12% -8%, rgba(8, 145, 178, 0.07), transparent 55%),
+    radial-gradient(700px 500px at 92% 5%, rgba(124, 58, 237, 0.05), transparent 50%),
+    radial-gradient(600px 400px at 50% 105%, rgba(8, 145, 178, 0.03), transparent 60%),
+    var(--bg);
 }
 
 img {
@@ -109,11 +123,13 @@ a:hover {
   top: 12px;
 }
 
+/* ── Header ─────────────────────────────────────────────────────── */
+
 .siteHeader {
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
 }
@@ -161,7 +177,7 @@ a:hover {
   width: 34px;
   height: 34px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 45%, #7c3aed));
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 45%, var(--purple)));
   box-shadow: var(--shadow);
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
@@ -265,6 +281,8 @@ a:hover {
   gap: 10px;
 }
 
+/* ── Buttons ─────────────────────────────────────────────────────── */
+
 .btn {
   appearance: none;
   border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
@@ -273,24 +291,150 @@ a:hover {
   padding: 9px 12px;
   border-radius: 12px;
   font-weight: 650;
+  font-family: inherit;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
-.btn[data-theme-toggle]::before {
-  font-family: "Font Awesome 6 Free", sans-serif;
-  font-weight: 900;
-  font-size: 13px;
+/* ── Theme toggle (creative sun / moon slider) ─────────────────── */
+
+.themeToggle {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
 }
 
-html[data-theme="dark"] .btn[data-theme-toggle]::before {
-  content: "\f186";
+.themeToggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-html[data-theme="light"] .btn[data-theme-toggle]::before {
-  content: "\f185";
+.toggleTrack {
+  position: relative;
+  width: 64px;
+  height: 32px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1.5px solid;
+  transition:
+    background 400ms var(--easeOut),
+    border-color 400ms var(--easeOut),
+    box-shadow 400ms var(--easeOut);
+}
+
+html[data-theme="dark"] .toggleTrack {
+  background: #0a1628;
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+
+html[data-theme="light"] .toggleTrack {
+  background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+  border-color: #f59e0b;
+}
+
+.themeToggle:hover .toggleTrack {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+html[data-theme="light"] .themeToggle:hover .toggleTrack {
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22);
+}
+
+/* Stars */
+.toggleStar {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(220, 233, 248, 0.9);
+  pointer-events: none;
+  transition:
+    opacity 350ms var(--easeOut),
+    transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.toggleStar:nth-child(1) { width: 3px; height: 3px; top: 8px;  left: 8px;  }
+.toggleStar:nth-child(2) { width: 2px; height: 2px; top: 18px; left: 13px; }
+.toggleStar:nth-child(3) { width: 2px; height: 2px; top: 10px; left: 20px; }
+
+html[data-theme="dark"]  .toggleStar { opacity: 0.85; transform: scale(1); }
+html[data-theme="light"] .toggleStar { opacity: 0;    transform: scale(0); }
+
+/* Sliding orb */
+.toggleOrb {
+  position: absolute;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition:
+    left 420ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 380ms var(--easeOut),
+    box-shadow 380ms var(--easeOut);
+}
+
+/* Moon (dark mode) — dark navy orb, icon pops in cyan */
+html[data-theme="dark"] .toggleOrb {
+  left: 36px;
+  background: #0f1c30;
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.2),
+    0 2px 8px rgba(34, 211, 238, 0.18);
+}
+
+/* Sun (light mode) — golden orb with warm glow */
+html[data-theme="light"] .toggleOrb {
+  left: 4px;
+  background: #fbbf24;
+  box-shadow: 0 0 8px 3px rgba(251, 191, 36, 0.45);
+}
+
+/* Icons inside orb */
+.toggleOrbIcon {
+  position: absolute;
+  font-size: 12px;
+  line-height: 1;
+  transition:
+    opacity 220ms var(--easeOut),
+    transform 280ms var(--easeOut);
+}
+
+html[data-theme="dark"] .toggleOrbIcon--moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  color: var(--accent);
+}
+
+html[data-theme="dark"] .toggleOrbIcon--sun {
+  opacity: 0;
+  transform: scale(0) rotate(90deg);
+}
+
+html[data-theme="light"] .toggleOrbIcon--sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  color: #78350f;
+}
+
+html[data-theme="light"] .toggleOrbIcon--moon {
+  opacity: 0;
+  transform: scale(0) rotate(-90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggleTrack,
+  .toggleOrb,
+  .toggleStar,
+  .toggleOrbIcon {
+    transition: none !important;
+  }
 }
 
 .siteHeader .btnPrimary::before {
@@ -325,9 +469,33 @@ html[data-theme="light"] .btn[data-theme-toggle]::before {
   box-shadow: 0 16px 40px color-mix(in srgb, var(--accent) 16%, rgba(0, 0, 0, 0.35));
 }
 
+/* ── Main layout ─────────────────────────────────────────────────── */
+
 main {
+  flex: 1;
   padding: 34px 0 54px;
 }
+
+/* ── Page hero (inner pages) ─────────────────────────────────────── */
+
+.pageHero {
+  padding: 14px 0 0;
+}
+
+.pageHeroTitle {
+  font-size: clamp(28px, 4vw, 44px);
+  margin: 0 0 8px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.pageHeroSub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ── Hero section ────────────────────────────────────────────────── */
 
 .hero {
   padding: 18px 0 6px;
@@ -352,13 +520,32 @@ main {
   aspect-ratio: 1 / 1;
   border-radius: 999px;
   object-fit: cover;
-  border: 2px solid color-mix(in srgb, var(--border) 80%, transparent);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  border: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--accent) 9%, transparent),
+    0 18px 45px rgba(0, 0, 0, 0.35);
+  animation: avatarBreath 3.5s ease-in-out infinite;
 }
 
 .avatar:hover {
   transform: translateY(-2px);
-  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.42);
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--accent) 16%, transparent),
+    0 22px 58px rgba(0, 0, 0, 0.42);
+  animation: none;
+}
+
+@keyframes avatarBreath {
+  0%, 100% {
+    box-shadow:
+      0 0 0 4px color-mix(in srgb, var(--accent) 7%,  transparent),
+      0 18px 45px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 0 0 9px color-mix(in srgb, var(--accent) 15%, transparent),
+      0 18px 45px rgba(0, 0, 0, 0.35);
+  }
 }
 
 .avatarCaption {
@@ -380,8 +567,13 @@ main {
 
 .heroCard:hover {
   transform: translateY(-0.5px);
-  border-color: color-mix(in srgb, var(--accent) 22%, var(--border));
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--border));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent),
+    0 20px 48px rgba(0, 0, 0, 0.28);
 }
+
+/* ── Kicker ──────────────────────────────────────────────────────── */
 
 .kicker {
   display: inline-flex;
@@ -397,20 +589,87 @@ main {
   border-radius: 999px;
   background: var(--accent);
   box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 15%, transparent);
+  animation: kickerPing 2s ease-out infinite;
 }
+
+@keyframes kickerPing {
+  0% {
+    box-shadow:
+      0 0 0 0   color-mix(in srgb, var(--accent) 35%, transparent),
+      0 0 0 6px color-mix(in srgb, var(--accent) 15%, transparent);
+  }
+  100% {
+    box-shadow:
+      0 0 0 14px color-mix(in srgb, var(--accent) 0%,  transparent),
+      0 0 0 6px  color-mix(in srgb, var(--accent) 15%, transparent);
+  }
+}
+
+/* ── Headings ────────────────────────────────────────────────────── */
 
 h1 {
   margin: 10px 0 6px;
   line-height: 1.12;
   letter-spacing: -0.5px;
   font-size: clamp(26px, 3.8vw, 40px);
+  background: linear-gradient(135deg, var(--text) 45%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
+/* pageHeroTitle inherits h1 gradient via the .pageHeroTitle selector */
 
 .subtitle {
   margin: 0 0 14px;
   color: var(--muted);
   font-size: 16px;
 }
+
+/* ── Stats row ───────────────────────────────────────────────────── */
+
+.statsRow {
+  display: flex;
+  gap: 0;
+  margin: 16px 0 0;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: var(--radiusSm);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 50%, transparent);
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  gap: 2px;
+  border-right: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.statNum {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+}
+
+.statLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ── Pills ───────────────────────────────────────────────────────── */
 
 .pillRow {
   display: flex;
@@ -431,6 +690,8 @@ h1 {
   font-weight: 650;
   font-size: 13px;
 }
+
+/* ── Sections ────────────────────────────────────────────────────── */
 
 .section {
   margin-top: 26px;
@@ -461,6 +722,8 @@ h1 {
   font-size: 0.92em;
 }
 
+/* ── Cards ───────────────────────────────────────────────────────── */
+
 .grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -476,14 +739,112 @@ h1 {
 
 .card:hover {
   transform: var(--lift);
-  border-color: color-mix(in srgb, var(--accent) 26%, var(--border));
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent),
+    0 16px 40px rgba(0, 0, 0, 0.26);
 }
 
 .card h3 {
   margin: 0 0 6px;
   font-size: 16px;
 }
+
+/* ── Project cards ────────────────────────────────────────────────── */
+
+.projectCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  border-top: none;
+  border-radius: 4px 4px var(--radiusSm) var(--radiusSm);
+}
+
+/* Gradient accent bar at card top */
+.projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--purple)));
+  transition: opacity var(--dur) var(--easeOut);
+  border-radius: 4px;
+}
+
+.projectCard--mobile::before {
+  background: linear-gradient(90deg, var(--purple), color-mix(in srgb, var(--purple) 55%, var(--accent)));
+}
+
+.projectCard--dashboard::before {
+  background: linear-gradient(90deg, #10b981, var(--accent));
+}
+
+.projectCard:hover::before {
+  opacity: 0.75;
+}
+
+/* Type badge */
+.projectCardTop {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.projectType {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: color-mix(in srgb, var(--accent) 90%, var(--text));
+}
+
+.projectType--mobile {
+  color: color-mix(in srgb, var(--purple) 88%, var(--text));
+}
+
+.projectType--dashboard {
+  color: #10b981;
+}
+
+html[data-theme="light"] .projectType--dashboard {
+  color: #059669;
+}
+
+/* Card title split */
+.projectName {
+  margin: 0 0 3px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.projectDesc {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Tech stack line at bottom */
+.projectStack {
+  margin-top: 10px;
+  font-size: 11px;
+  color: color-mix(in srgb, var(--muted) 75%, transparent);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Store / live links pushed to bottom */
+.projectLinks {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+/* ── Experience card head ─────────────────────────────────────────── */
 
 .expCardHead {
   display: flex;
@@ -502,7 +863,7 @@ h1 {
 
 .expCompanyLinkTop {
   flex-shrink: 0;
-  color: #0a66c2;
+  color: var(--accent);
   font-size: 22px;
   line-height: 1;
   text-decoration: none;
@@ -510,9 +871,70 @@ h1 {
 }
 
 .expCompanyLinkTop:hover {
-  color: color-mix(in srgb, #0a66c2 82%, var(--text));
+  color: var(--accentHover);
   text-decoration: none;
 }
+
+.expCompanyLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.expCompanyLinks a:first-child {
+  font-size: 16px;
+}
+
+/* ── Timeline (experience page) ──────────────────────────────────── */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 15%, transparent)
+  );
+  border-radius: 2px;
+}
+
+.timelineItem {
+  position: relative;
+  padding-left: 52px;
+  margin-bottom: 16px;
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent);
+  z-index: 1;
+}
+
+/* ── Contact cards ───────────────────────────────────────────────── */
 
 .contactCard {
   position: relative;
@@ -574,6 +996,25 @@ h1 {
   color: var(--muted);
 }
 
+/* Semantic left-border accent per contact type */
+.contactCard--location { border-left: 3px solid var(--muted); }
+.contactCard--email    { border-left: 3px solid var(--accent); }
+.contactCard--phone    { border-left: 3px solid #10b981; }
+.contactCard--linkedin { border-left: 3px solid var(--accent); }
+.contactCard--github   { border-left: 3px solid var(--purple); }
+.contactCard--cv       { border-left: 3px solid #f59e0b; }
+
+.contactCard--phone  .titleIcon { color: #10b981; }
+.contactCard--github .titleIcon { color: color-mix(in srgb, var(--purple) 88%, var(--text)); }
+.contactCard--cv     .titleIcon { color: #f59e0b; }
+
+html[data-theme="light"] .contactCard--phone  { border-left-color: #059669; }
+html[data-theme="light"] .contactCard--phone  .titleIcon { color: #059669; }
+html[data-theme="light"] .contactCard--cv     { border-left-color: #d97706; }
+html[data-theme="light"] .contactCard--cv     .titleIcon { color: #d97706; }
+
+/* ── Meta & list ─────────────────────────────────────────────────── */
+
 .meta {
   color: var(--muted);
   font-weight: 650;
@@ -589,6 +1030,12 @@ h1 {
 .list li {
   margin: 6px 0;
 }
+
+.list li::marker {
+  color: var(--accent);
+}
+
+/* ── Tags ────────────────────────────────────────────────────────── */
 
 .tagRow {
   display: flex;
@@ -615,6 +1062,23 @@ h1 {
   background: color-mix(in srgb, var(--accent) 14%, var(--surface));
 }
 
+/* ── Scroll-reveal ───────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.55s var(--easeOut),
+    transform 0.55s var(--easeOut);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────── */
+
 @media (prefers-reduced-motion: reduce) {
   .brand,
   .navLinks a,
@@ -635,12 +1099,37 @@ h1 {
   .avatar:hover {
     transform: none !important;
   }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .kickerDot,
+  .avatar {
+    animation: none !important;
+  }
 }
 
+/* ── Footer ──────────────────────────────────────────────────────── */
+
 .siteFooter {
-  border-top: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
-  padding: 20px 0 28px;
+  position: relative;
+  padding: 24px 0 28px;
   color: var(--muted);
+}
+
+.siteFooter::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent) 30%,
+    var(--purple) 70%,
+    transparent 100%
+  );
 }
 
 .footerRow {
@@ -711,6 +1200,8 @@ h1 {
 .small {
   font-size: 13px;
 }
+
+/* ── Responsive: 900px ───────────────────────────────────────────── */
 
 @media (max-width: 900px) {
   .container {
@@ -806,8 +1297,18 @@ h1 {
   .footerRow {
     align-items: flex-start;
   }
+
+  .timeline::before,
+  .timelineItem::before {
+    display: none;
+  }
+
+  .timelineItem {
+    padding-left: 0;
+  }
 }
 
+/* ── Responsive: 600px ───────────────────────────────────────────── */
 
 @media (max-width: 600px) {
   .container {
@@ -856,7 +1357,21 @@ h1 {
   .small {
     font-size: 12px;
   }
+
+  .statsRow {
+    gap: 0;
+  }
+
+  .statNum {
+    font-size: 18px;
+  }
+
+  .pageHeroTitle {
+    font-size: clamp(24px, 6vw, 36px);
+  }
 }
+
+/* ── Responsive: 420px ───────────────────────────────────────────── */
 
 @media (max-width: 420px) {
   .brand {
@@ -899,4 +1414,3 @@ h1 {
     font-size: 14px;
   }
 }
-

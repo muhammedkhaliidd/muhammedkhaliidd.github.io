@@ -57,7 +57,5 @@ npx serve .
 
 - **LinkedIn URL**: update the LinkedIn card on `contact.html`
 - **Theme**: palette is defined in `assets/css/styles.css` using CSS variables
-- **CV file (local fallback)**: replace `assets/cv/Muhammed_Khalid_CV.pdf` (optional)
-- **CV link**: update the Google Drive URL used in the HTML pages (keep the same Drive file ID by uploading a new *version* in Drive)
+- **CV link**: update the Google Drive URL used in the HTML pages (keep the same Drive file ID by uploading a new _version_ in Drive)
 - **Photo**: replace `assets/img/headshot.png`
-
