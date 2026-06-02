@@ -28,8 +28,8 @@
     }
   }
 
-  // Dark is default
-  const initial = getStoredTheme() === "light" ? "light" : "dark";
+  // Light is default
+  const initial = getStoredTheme() === "dark" ? "dark" : "light";
   applyTheme(initial);
 
   const toggle = document.querySelector("[data-theme-toggle]");
