@@ -525,6 +525,7 @@ main {
     0 0 0 6px color-mix(in srgb, var(--accent) 9%, transparent),
     0 18px 45px rgba(0, 0, 0, 0.35);
   animation: avatarBreath 3.5s ease-in-out infinite;
+  margin-bottom: 10px;
 }
 
 .avatar:hover {
@@ -1039,6 +1040,7 @@ html[data-theme="light"] .contactCard--cv     .titleIcon { color: #d97706; }
 
 .tagRow {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 10px;
